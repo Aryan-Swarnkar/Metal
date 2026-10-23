@@ -1,6 +1,6 @@
 from collections import Counter
 
-from analyzer import analyze
+from .analyser import analyze
 
 
 class InvertedIndex:
@@ -29,7 +29,6 @@ class InvertedIndex:
                 self._postings[term] = {}
 
             self._postings[term][doc_id] = frequency
-    
 
     def remove_document(self, doc_id: int) -> None:
         term_counts = self._doc_terms.pop(doc_id, None)
